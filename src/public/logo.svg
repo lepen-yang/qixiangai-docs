@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" fill="none">
+  <defs>
+    <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+  <!-- 图标 -->
+  <rect x="2" y="6" width="28" height="28" rx="7" fill="url(#lg)"/>
+  <path d="M10 14h12a2 2 0 012 2v10a2 2 0 01-2 2H10a2 2 0 01-2-2V16a2 2 0 012-2z" fill="rgba(255,255,255,0.25)"/>
+  <path d="M13 18l6 4-6 4V18z" fill="white"/>
+  <!-- 文字 -->
+  <text x="40" y="27" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="700" fill="url(#lg)">栖象工作室</text>
+</svg>

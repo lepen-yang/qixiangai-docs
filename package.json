@@ -1,0 +1,47 @@
+{
+  "name": "qixiangai-docs",
+  "version": "1.0.0",
+  "description": "栖象工作室 — AI 驱动的漫剧创作工具",
+  "type": "module",
+  "keywords": [
+    "AI创作",
+    "AI漫剧",
+    "AI绘画",
+    "AI写作",
+    "AI视频",
+    "AI视频生成",
+    "AIGC",
+    "人工智能",
+    "创作工具",
+    "数字内容创作",
+    "漫画创作",
+    "漫剧制作",
+    "小说创作",
+    "视频创作",
+    "分镜生成",
+    "角色管理",
+    "栖象工作室",
+    "vitepress",
+    "documentation"
+  ],
+  "homepage": "https://www.qixiangai.chat/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lepen-yang/qixiangai-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lepen-yang/qixiangai-docs/issues"
+  },
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "node scripts/fetch-release.js && vitepress dev src",
+    "build": "node scripts/fetch-release.js && vitepress build src",
+    "preview": "node scripts/fetch-release.js && vitepress preview src"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "dependencies": {
+    "js-yaml": "^5.2.3"
+  }
+}

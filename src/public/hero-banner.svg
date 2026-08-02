@@ -1,0 +1,246 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="50%" stop-color="#0f0f1a"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </radialGradient>
+
+    <!-- Mesh pattern -->
+    <pattern id="mesh" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M0 20 L40 20 M20 0 L20 40" stroke="#6366f1" stroke-width="0.3" opacity="0.15"/>
+    </pattern>
+
+    <!-- Glowing orb gradient -->
+    <radialGradient id="orbGrad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="40%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#3730a3" stop-opacity="0.3"/>
+    </radialGradient>
+
+    <!-- Energy beam gradient -->
+    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Manga panel gradient -->
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2e"/>
+      <stop offset="100%" stop-color="#13131f"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft glow -->
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bgGrad)"/>
+  <rect width="600" height="400" fill="url(#mesh)"/>
+
+  <!-- Floating particles -->
+  <circle cx="80" cy="60" r="2" fill="#6366f1" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="520" cy="80" r="1.5" fill="#a78bfa" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.1;0.5" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="450" cy="340" r="2" fill="#6366f1" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="120" cy="350" r="1" fill="#a78bfa" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Left: AI Interface Panel -->
+  <g transform="translate(30, 50)">
+    <!-- Panel background -->
+    <rect x="0" y="0" width="160" height="280" rx="12" fill="url(#panelGrad)" stroke="#2a2a3e" stroke-width="1"/>
+    <!-- Panel header -->
+    <rect x="0" y="0" width="160" height="32" rx="12" fill="none"/>
+    <rect x="0" y="0" width="160" height="24" rx="12" fill="#2a2a3e" opacity="0.5"/>
+    <circle cx="20" cy="12" r="3" fill="#6366f1"/>
+    <circle cx="32" cy="12" r="3" fill="#a78bfa"/>
+    <circle cx="44" cy="12" r="3" fill="#818cf8" opacity="0.5"/>
+
+    <!-- Neural network visualization -->
+    <g transform="translate(20, 50)">
+      <!-- Nodes -->
+      <circle cx="20" cy="15" r="4" fill="#6366f1" filter="url(#softGlow)"/>
+      <circle cx="60" cy="10" r="4" fill="#a78bfa" filter="url(#softGlow)"/>
+      <circle cx="100" cy="20" r="4" fill="#818cf8" filter="url(#softGlow)"/>
+      <circle cx="30" cy="50" r="4" fill="#6366f1" filter="url(#softGlow)"/>
+      <circle cx="70" cy="45" r="4" fill="#a78bfa" filter="url(#softGlow)"/>
+      <circle cx="50" cy="80" r="5" fill="#a78bfa" filter="url(#glow)"/>
+      <circle cx="20" cy="90" r="4" fill="#6366f1" filter="url(#softGlow)"/>
+      <circle cx="80" cy="85" r="4" fill="#818cf8" filter="url(#softGlow)"/>
+
+      <!-- Connections -->
+      <line x1="20" y1="15" x2="60" y2="10" stroke="#6366f1" stroke-width="1" opacity="0.4"/>
+      <line x1="60" y1="10" x2="100" y2="20" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+      <line x1="20" y1="15" x2="30" y2="50" stroke="#6366f1" stroke-width="1" opacity="0.4"/>
+      <line x1="60" y1="10" x2="70" y2="45" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+      <line x1="100" y1="20" x2="70" y2="45" stroke="#818cf8" stroke-width="1" opacity="0.4"/>
+      <line x1="30" y1="50" x2="50" y2="80" stroke="#6366f1" stroke-width="1" opacity="0.4"/>
+      <line x1="70" y1="45" x2="50" y2="80" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+      <line x1="50" y1="80" x2="20" y2="90" stroke="#a78bfa" stroke-width="1.5" opacity="0.6"/>
+      <line x1="50" y1="80" x2="80" y2="85" stroke="#818cf8" stroke-width="1" opacity="0.4"/>
+    </g>
+
+    <!-- Tool icons -->
+    <g transform="translate(20, 160)">
+      <rect x="0" y="0" width="28" height="28" rx="6" fill="#2a2a3e" stroke="#3a3a4e" stroke-width="1"/>
+      <rect x="8" y="6" width="12" height="8" rx="2" fill="#6366f1" opacity="0.8"/>
+      <rect x="8" y="16" width="12" height="4" rx="1" fill="#a78bfa" opacity="0.6"/>
+
+      <rect x="40" y="0" width="28" height="28" rx="6" fill="#2a2a3e" stroke="#3a3a4e" stroke-width="1"/>
+      <circle cx="54" cy="14" r="6" fill="none" stroke="#a78bfa" stroke-width="1.5" opacity="0.8"/>
+      <circle cx="54" cy="14" r="2" fill="#a78bfa" opacity="0.8"/>
+
+      <rect x="80" y="0" width="28" height="28" rx="6" fill="#2a2a3e" stroke="#3a3a4e" stroke-width="1"/>
+      <path d="M88 10 L96 10 L96 18 L88 18 Z" fill="none" stroke="#818cf8" stroke-width="1.5" opacity="0.8"/>
+      <path d="M92 6 L92 22" stroke="#818cf8" stroke-width="1" opacity="0.6"/>
+    </g>
+
+    <!-- Sliders -->
+    <g transform="translate(20, 210)">
+      <rect x="0" y="0" width="120" height="3" rx="1.5" fill="#2a2a3e"/>
+      <rect x="0" y="0" width="70" height="3" rx="1.5" fill="#6366f1" opacity="0.8"/>
+      <circle cx="70" cy="1.5" r="4" fill="#a78bfa" filter="url(#softGlow)"/>
+
+      <rect x="0" y="18" width="120" height="3" rx="1.5" fill="#2a2a3e"/>
+      <rect x="0" y="18" width="45" height="3" rx="1.5" fill="#a78bfa" opacity="0.8"/>
+      <circle cx="45" cy="19.5" r="4" fill="#6366f1" filter="url(#softGlow)"/>
+
+      <rect x="0" y="36" width="120" height="3" rx="1.5" fill="#2a2a3e"/>
+      <rect x="0" y="36" width="90" height="3" rx="1.5" fill="#818cf8" opacity="0.8"/>
+      <circle cx="90" cy="37.5" r="4" fill="#a78bfa" filter="url(#softGlow)"/>
+    </g>
+  </g>
+
+  <!-- Right: Manga Panels -->
+  <g transform="translate(400, 50)">
+    <!-- Panel 1: Large portrait -->
+    <rect x="0" y="0" width="160" height="200" rx="8" fill="url(#panelGrad)" stroke="#2a2a3e" stroke-width="1.5"/>
+    <!-- Character silhouette -->
+    <g transform="translate(80, 100)">
+      <!-- Hair -->
+      <path d="M-35 -50 Q-40 -70 -20 -75 Q0 -80 20 -70 Q40 -60 35 -40 Q30 -20 25 -10 L-25 -10 Q-30 -20 -35 -50Z" fill="#1a1a2e" stroke="#6366f1" stroke-width="1.5" opacity="0.8"/>
+      <!-- Face outline -->
+      <ellipse cx="0" cy="-5" rx="25" ry="30" fill="none" stroke="#a78bfa" stroke-width="1.5" opacity="0.6"/>
+      <!-- Eyes -->
+      <ellipse cx="-10" cy="-8" rx="6" ry="7" fill="none" stroke="#6366f1" stroke-width="1.5" opacity="0.7"/>
+      <ellipse cx="10" cy="-8" rx="6" ry="7" fill="none" stroke="#6366f1" stroke-width="1.5" opacity="0.7"/>
+      <circle cx="-10" cy="-8" r="2" fill="#a78bfa" opacity="0.8"/>
+      <circle cx="10" cy="-8" r="2" fill="#a78bfa" opacity="0.8"/>
+      <!-- Body -->
+      <path d="M-20 25 Q-25 50 -15 65 L-30 90 L30 90 L15 65 Q25 50 20 25Z" fill="#1a1a2e" stroke="#818cf8" stroke-width="1.5" opacity="0.7"/>
+      <!-- Action lines -->
+      <line x1="-50" y1="-30" x2="-40" y2="-20" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+      <line x1="40" y1="-25" x2="50" y2="-15" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+      <line x1="45" y1="30" x2="55" y2="35" stroke="#6366f1" stroke-width="1" opacity="0.4"/>
+    </g>
+    <!-- Sketch lines overlay -->
+    <path d="M10 180 L40 170 L70 185" fill="none" stroke="#a78bfa" stroke-width="0.8" opacity="0.3"/>
+    <path d="M100 190 L130 175 L150 185" fill="none" stroke="#6366f1" stroke-width="0.8" opacity="0.3"/>
+
+    <!-- Panel 2: Small bottom left -->
+    <rect x="0" y="210" width="75" height="120" rx="6" fill="url(#panelGrad)" stroke="#2a2a3e" stroke-width="1"/>
+    <!-- Mini sketch -->
+    <path d="M20 240 Q30 235 40 240 Q35 250 25 248Z" fill="none" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+    <path d="M15 260 L60 255 L55 270 L10 275Z" fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+    <circle cx="50" cy="280" r="8" fill="none" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+
+    <!-- Panel 3: Small bottom right -->
+    <rect x="85" y="210" width="75" height="120" rx="6" fill="url(#panelGrad)" stroke="#2a2a3e" stroke-width="1"/>
+    <!-- Color palette indicator -->
+    <rect x="20" y="240" width="12" height="12" rx="2" fill="#6366f1" opacity="0.8"/>
+    <rect x="38" y="240" width="12" height="12" rx="2" fill="#a78bfa" opacity="0.8"/>
+    <rect x="56" y="240" width="12" height="12" rx="2" fill="#818cf8" opacity="0.8"/>
+    <rect x="20" y="260" width="12" height="12" rx="2" fill="#c084fc" opacity="0.6"/>
+    <rect x="38" y="260" width="12" height="12" rx="2" fill="#4f46e5" opacity="0.8"/>
+    <rect x="56" y="260" width="12" height="12" rx="2" fill="#7c3aed" opacity="0.7"/>
+    <!-- Brush stroke -->
+    <path d="M15 290 Q30 285 45 292 Q35 300 20 298Z" fill="#a78bfa" opacity="0.5"/>
+  </g>
+
+  <!-- Center: AI Orb with Energy Streams -->
+  <g transform="translate(300, 200)">
+    <!-- Outer glow rings -->
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#6366f1" stroke-width="1" opacity="0.2">
+      <animate attributeName="r" values="45;55;45" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.1;0.2" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#a78bfa" stroke-width="1.5" opacity="0.3">
+      <animate attributeName="r" values="35;45;35" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.15;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Main orb -->
+    <circle cx="0" cy="0" r="35" fill="url(#orbGrad)" filter="url(#glow)"/>
+
+    <!-- AI text -->
+    <text x="0" y="6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="white" opacity="0.9">AI</text>
+
+    <!-- Energy streams to left panel -->
+    <path d="M-35 0 Q-80 -20 -120 -30" fill="none" stroke="url(#beamGrad)" stroke-width="3" opacity="0.6" stroke-linecap="round"/>
+    <path d="M-35 10 Q-70 10 -100 20" fill="none" stroke="url(#beamGrad)" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+    <path d="M-35 -10 Q-60 -30 -80 -40" fill="none" stroke="url(#beamGrad)" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+
+    <!-- Energy streams to right panels -->
+    <path d="M35 0 Q80 -20 120 -30" fill="none" stroke="url(#beamGrad)" stroke-width="3" opacity="0.6" stroke-linecap="round"/>
+    <path d="M35 10 Q70 15 100 25" fill="none" stroke="url(#beamGrad)" stroke-width="2" opacity="0.4" stroke-linecap="round"/>
+    <path d="M35 -10 Q60 -30 80 -40" fill="none" stroke="url(#beamGrad)" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+
+    <!-- Orbiting dots -->
+    <circle cx="45" cy="-20" r="2" fill="#a78bfa" opacity="0.8">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="-30" cy="30" r="1.5" fill="#6366f1" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-360 0 0" dur="12s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Bottom: Manga panels spread -->
+  <g transform="translate(200, 340)">
+    <rect x="0" y="0" width="50" height="35" rx="4" fill="url(#panelGrad)" stroke="#2a2a3e" stroke-width="1" opacity="0.8"/>
+    <rect x="60" y="0" width="40" height="35" rx="4" fill="url(#panelGrad)" stroke="#2a2a3e" stroke-width="1" opacity="0.8"/>
+    <rect x="110" y="0" width="55" height="35" rx="4" fill="url(#panelGrad)" stroke="#2a2a3e" stroke-width="1" opacity="0.8"/>
+    <rect x="175" y="0" width="45" height="35" rx="4" fill="url(#panelGrad)" stroke="#2a2a3e" stroke-width="1" opacity="0.8"/>
+
+    <!-- Mini panel content -->
+    <circle cx="25" cy="17" r="6" fill="none" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+    <path d="M70 10 L90 25" stroke="#a78bfa" stroke-width="1" opacity="0.4"/>
+    <rect x="125" y="10" width="25" height="15" rx="2" fill="none" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+    <circle cx="197" cy="17" r="4" fill="#a78bfa" opacity="0.4"/>
+  </g>
+
+  <!-- Top right corner decorative element -->
+  <g transform="translate(560, 20)" opacity="0.3">
+    <rect x="0" y="0" width="30" height="2" rx="1" fill="#6366f1"/>
+    <rect x="0" y="8" width="20" height="2" rx="1" fill="#a78bfa"/>
+    <rect x="0" y="16" width="25" height="2" rx="1" fill="#818cf8" opacity="0.6"/>
+  </g>
+
+  <!-- Bottom left corner decorative element -->
+  <g transform="translate(20, 380)" opacity="0.3">
+    <rect x="0" y="0" width="25" height="2" rx="1" fill="#a78bfa"/>
+    <rect x="0" y="8" width="15" height="2" rx="1" fill="#6366f1" opacity="0.7"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+# robots.txt for 栖象工作室 (https://www.qixiangai.chat/)
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.qixiangai.chat/sitemap.xml

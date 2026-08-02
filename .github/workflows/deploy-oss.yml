@@ -1,0 +1,47 @@
+name: Build and Deploy to Aliyun OSS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. 检出代码 ──────────────────────────────
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ── 2. 设置 Node.js ──────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      # ── 3. 安装依赖 & 构建 ───────────────────────
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build VitePress site
+        run: npm run build
+
+      # ── 4. 安装并配置 ossutil ────────────────────
+      - name: Setup ossutil
+        uses: manyuanrong/setup-ossutil@v3.0
+        with:
+          endpoint: ${{ vars.OSS_ENDPOINT }}
+          access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+
+      # ── 5. 上传构建产物到 OSS ────────────────────
+      - name: Deploy to OSS
+        run: |
+          echo "🚀 开始部署到阿里云 OSS ..."
+
+          ossutil cp -rf src/.vitepress/dist/ \
+            "oss://${{ vars.OSS_BUCKET }}${{ vars.OSS_PREFIX }}"
+
+          echo "✅ 部署完成！"

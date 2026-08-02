@@ -1,0 +1,31 @@
+{
+  "version": "1.0.20",
+  "platforms": [
+    {
+      "name": "macOS",
+      "items": [
+        {
+          "label": "Apple Silicon (M1/M2/M3/M4)",
+          "file": "1.0.17/qixiang-studio-1.0.17-arm64.dmg",
+          "available": true
+        },
+        {
+          "label": "Intel",
+          "file": "",
+          "available": false
+        }
+      ]
+    },
+    {
+      "name": "Windows",
+      "items": [
+        {
+          "label": "Windows 10/11 (64-bit)",
+          "file": "1.0.20/qixiang-studio-1.0.20-setup.exe",
+          "available": true
+        }
+      ]
+    }
+  ],
+  "fetchedAt": "2026-08-02T14:55:06.641Z"
+}
