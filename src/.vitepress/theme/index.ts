@@ -14,7 +14,7 @@ export default {
   },
   enhanceApp({ app, router }) {
     app.component("HeroDownloadDropdown", HeroDownloadDropdown);
-    if (import.meta.env.PROD) {
+    if (import.meta.env.PROD && !import.meta.env.SSR) {
       posthog.init(import.meta.env.VITE_POSTHOG_KEY);
       // 路由切换上报pageview
       router.onAfterRouteChange = () => {
