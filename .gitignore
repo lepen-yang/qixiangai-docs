@@ -27,9 +27,10 @@ selenium-debug.log
 node_modules
 
 # misc
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-.vitepress\cache
+cache
