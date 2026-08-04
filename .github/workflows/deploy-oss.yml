@@ -23,7 +23,7 @@ jobs:
 
       # ── 3. 安装依赖 & 构建 ───────────────────────
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build VitePress site
         run: npm run build
