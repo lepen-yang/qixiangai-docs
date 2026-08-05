@@ -1,7 +1,7 @@
 import { h } from "vue";
 import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
-import posthog from "posthog-js";
+import { initPosthog, trackPageview } from "./analytics";
 import HeroDownloadDropdown from "./components/HeroDownloadDropdown.vue";
 import "./custom.css";
 
@@ -14,12 +14,10 @@ export default {
   },
   enhanceApp({ app, router }) {
     app.component("HeroDownloadDropdown", HeroDownloadDropdown);
-    if (import.meta.env.PROD && !import.meta.env.SSR) {
-      posthog.init(import.meta.env.VITE_POSTHOG_KEY);
-      // 路由切换上报pageview
-      router.onAfterRouteChange = () => {
-        posthog.capture("$pageview");
-      };
-    }
+    initPosthog();
+    // 路由切换上报 pageview
+    router.onAfterRouteChange = () => {
+      trackPageview();
+    };
   },
 } satisfies Theme;

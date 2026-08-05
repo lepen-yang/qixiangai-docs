@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, nextTick, watch } from 'vue'
 import VPButton from 'vitepress/dist/client/theme-default/components/VPButton.vue'
+import { trackEvent } from '../analytics'
 import releaseData from '../release-data.json'
 
 const RELEASE_BASE = 'http://app.qixiangai.chat/releases/qixiang-studio'
@@ -38,6 +39,29 @@ const platforms = ref<Platform[]>(
 const open = ref(false)
 const menuPosition = ref({ top: '0px', left: '0px' })
 const triggerRef = ref<HTMLElement | null>(null)
+
+function trackDownloadClick(platform: string, label: string, file: string) {
+  trackEvent('download_click', {
+    platform,
+    label,
+    file,
+    version: version.value,
+  })
+}
+
+function onMainDownloadClick() {
+  open.value = !open.value
+  trackEvent('download_button_click', {
+    version: version.value,
+    action: open.value ? 'open' : 'close',
+  })
+}
+
+function onDownloadLinkClick(platformName: string, item: DownloadItem) {
+  if (!item.available) return
+  open.value = false
+  trackDownloadClick(platformName, item.label, item.file)
+}
 
 function updateMenuPosition() {
   if (!triggerRef.value) return
@@ -87,7 +111,7 @@ const buttonText = computed(() => {
   <div class="hero-download-actions">
 
 
-    <div class="action" ref="triggerRef" @click="open = !open" aria-haspopup="true" :aria-expanded="open">
+    <div class="action" ref="triggerRef" @click="onMainDownloadClick" aria-haspopup="true" :aria-expanded="open">
       <VPButton tag='button' theme="brand" size="medium" :text="buttonText" />
     </div>
 
@@ -108,7 +132,7 @@ const buttonText = computed(() => {
             <a v-for="item in platform.items" :key="item.file"
               :href="item.available ? `${RELEASE_BASE}/${item.file}` : undefined" class="hero-download-link"
               :class="{ 'hero-download-link--disabled': !item.available }" target="_blank" rel="noopener"
-              @click="item.available ? open = false : undefined">
+              @click="item.available ? onDownloadLinkClick(platform.name, item) : undefined">
               <span>{{ item.label }}</span>
               <svg v-if="item.available" class="hero-download-link-icon" width="12" height="12" viewBox="0 0 24 24"
                 fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
