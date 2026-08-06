@@ -18,15 +18,15 @@
     },
     {
       "name": "Windows",
-      "version": "1.0.21",
+      "version": "1.0.22",
       "items": [
         {
           "label": "Windows 10/11 (64-bit)",
-          "file": "1.0.21/qixiang-studio-1.0.21-setup.exe",
+          "file": "1.0.22/栖象AI工作室-1.0.22-setup.exe",
           "available": true
         }
       ]
     }
   ],
-  "fetchedAt": "2026-08-06T08:02:26.782Z"
+  "fetchedAt": "2026-08-06T16:45:58.529Z"
 }
