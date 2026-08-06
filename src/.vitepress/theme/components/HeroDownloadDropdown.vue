@@ -146,6 +146,7 @@ const buttonText = computed(() => {
           <div class="hero-download-platform-header">
             <span class="hero-download-platform-icon" v-html="platform.icon"></span>
             <span class="hero-download-platform-name">{{ platform.name }}</span>
+            <span v-if="platform.version" class="hero-download-platform-version">v{{ platform.version }}</span>
           </div>
           <div class="hero-download-platform-links">
             <a v-for="item in platform.items" :key="item.file"
@@ -290,6 +291,14 @@ const buttonText = computed(() => {
   opacity: 0.6;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+}
+
+.hero-download-platform-version {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--vp-c-brand-1, #4f46e5);
+  opacity: 0.8;
 }
 
 .hero-download-platform-links {

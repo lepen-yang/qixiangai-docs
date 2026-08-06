@@ -2,11 +2,11 @@
   "platforms": [
     {
       "name": "macOS",
-      "version": "1.0.17",
+      "version": "1.0.18",
       "items": [
         {
           "label": "Apple Silicon (M1/M2/M3/M4)",
-          "file": "1.0.17/qixiang-studio-1.0.17-arm64.dmg",
+          "file": "1.0.18/栖象AI工作室-1.0.18-arm64.dmg",
           "available": true
         },
         {
@@ -18,15 +18,15 @@
     },
     {
       "name": "Windows",
-      "version": "1.0.20",
+      "version": "1.0.21",
       "items": [
         {
           "label": "Windows 10/11 (64-bit)",
-          "file": "1.0.20/qixiang-studio-1.0.20-setup.exe",
+          "file": "1.0.21/qixiang-studio-1.0.21-setup.exe",
           "available": true
         }
       ]
     }
   ],
-  "fetchedAt": "2026-08-05T02:53:33.882Z"
+  "fetchedAt": "2026-08-06T08:02:26.782Z"
 }
