@@ -4,7 +4,7 @@ import VPButton from 'vitepress/dist/client/theme-default/components/VPButton.vu
 import { trackEvent } from '../analytics'
 import releaseData from '../release-data.json'
 
-const RELEASE_BASE = 'http://app.qixiangai.chat/releases/qixiang-studio'
+const RELEASE_BASE = 'https://app.qixiangai.chat/releases/qixiang-studio'
 
 interface DownloadItem {
   label: string
@@ -14,6 +14,7 @@ interface DownloadItem {
 
 interface Platform {
   name: string
+  version: string
   icon: string
   items: DownloadItem[]
 }
@@ -23,10 +24,10 @@ const platformIcons: Record<string, string> = {
   Windows: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>',
 }
 
-const version = ref(releaseData.version || '')
 const platforms = ref<Platform[]>(
   releaseData.platforms.map((p: any) => ({
     name: p.name,
+    version: p.version || '',
     icon: platformIcons[p.name] || '',
     items: p.items.map((it: any) => ({
       label: it.label,
@@ -40,27 +41,26 @@ const open = ref(false)
 const menuPosition = ref({ top: '0px', left: '0px' })
 const triggerRef = ref<HTMLElement | null>(null)
 
-function trackDownloadClick(platform: string, label: string, file: string) {
+function trackDownloadClick(platform: Platform, label: string, file: string) {
   trackEvent('download_click', {
-    platform,
+    platform: platform.name,
+    version: platform.version,
     label,
     file,
-    version: version.value,
   })
 }
 
 function onMainDownloadClick() {
   open.value = !open.value
   trackEvent('download_button_click', {
-    version: version.value,
     action: open.value ? 'open' : 'close',
   })
 }
 
-function onDownloadLinkClick(platformName: string, item: DownloadItem) {
+function onDownloadLinkClick(platform: Platform, item: DownloadItem) {
   if (!item.available) return
   open.value = false
-  trackDownloadClick(platformName, item.label, item.file)
+  trackDownloadClick(platform, item.label, item.file)
 }
 
 function updateMenuPosition() {
@@ -102,8 +102,27 @@ onUnmounted(() => {
 
 })
 
+function detectPlatform(): string {
+  if (import.meta.env.SSR) return ''
+  const ua = navigator.userAgent
+  if (/Mac|iPod|iPhone|iPad/.test(ua)) return 'macOS'
+  if (/Win/.test(ua)) return 'Windows'
+  return ''
+}
+
+const currentPlatform = detectPlatform()
+
+const displayVersion = computed(() => {
+  if (currentPlatform) {
+    const match = platforms.value.find((p) => p.name === currentPlatform)
+    if (match?.version) return match.version
+  }
+  const fallback = platforms.value.find((p) => p.version)
+  return fallback?.version || ''
+})
+
 const buttonText = computed(() => {
-  return version.value ? `立即下载 v${version.value}` : '立即下载'
+  return displayVersion.value ? `立即下载 v${displayVersion.value}` : '立即下载'
 })
 </script>
 
@@ -132,7 +151,7 @@ const buttonText = computed(() => {
             <a v-for="item in platform.items" :key="item.file"
               :href="item.available ? `${RELEASE_BASE}/${item.file}` : undefined" class="hero-download-link"
               :class="{ 'hero-download-link--disabled': !item.available }" target="_blank" rel="noopener"
-              @click="item.available ? onDownloadLinkClick(platform.name, item) : undefined">
+              @click="item.available ? onDownloadLinkClick(platform, item) : undefined">
               <span>{{ item.label }}</span>
               <svg v-if="item.available" class="hero-download-link-icon" width="12" height="12" viewBox="0 0 24 24"
                 fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">

@@ -48,11 +48,11 @@ function parseUpdaterYml(ymlText) {
 }
 
 async function main() {
-  let overallVersion = "";
   const resultPlatforms = [];
 
   for (const platform of PLATFORMS) {
     const url = `${RELEASE_BASE}/${platform.ymlFile}`;
+    let version = "";
     let items = platform.items.map((it) => ({
       label: it.label,
       file: "",
@@ -62,7 +62,7 @@ async function main() {
     try {
       const ymlText = await fetchYml(url);
       const data = parseUpdaterYml(ymlText);
-      if (data.version) overallVersion = data.version;
+      version = data.version;
 
       for (const file of data.files) {
         const lower = file.toLowerCase();
@@ -77,19 +77,19 @@ async function main() {
           };
         }
       }
-      console.log(`✅ ${platform.name}: loaded ${data.files.length} files`);
+      console.log(`✅ ${platform.name}: v${version} — loaded ${data.files.length} files`);
     } catch (err) {
       console.warn(`⚠️  ${platform.name}: ${err.message}`);
     }
 
     resultPlatforms.push({
       name: platform.name,
+      version,
       items,
     });
   }
 
   const output = {
-    version: overallVersion,
     platforms: resultPlatforms,
     fetchedAt: new Date().toISOString(),
   };
