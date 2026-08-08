@@ -131,8 +131,8 @@ onUnmounted(() => {
       <!-- 下载量 -->
       <div class="stats-download" :style="{ '--delay': '0.4s' }">
         <div class="stats-download-decor">
-          <svg class="stats-download-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="stats-download-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 4v12m0 0l-5-5m5 5l5-5" />
             <path d="M4 20h16" />
           </svg>
@@ -149,8 +149,7 @@ onUnmounted(() => {
 <style scoped>
 .stats-section {
   position: relative;
-  padding: 72px 24px;
-  overflow: hidden;
+  padding: 120px 0px;
 }
 
 /* ── Background glows ─────────────────────────────────── */
@@ -335,6 +334,7 @@ onUnmounted(() => {
 }
 
 @keyframes bounceDown {
+
   0%,
   100% {
     transform: translateY(0);

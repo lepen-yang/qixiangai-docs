@@ -111,6 +111,10 @@
 
 每个 Prompt 显示是否已自定义（覆盖内置默认），可随时恢复内置版本。
 
+![提示词库](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123949476.png)
+
+![设置页](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807130658044.png)
+
 ## 相关链接
 
 - [功能总览](./features)

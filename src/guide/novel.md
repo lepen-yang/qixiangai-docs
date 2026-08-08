@@ -2,6 +2,8 @@
 
 栖象工作室 内置完整的小说创作引擎，AI 全流程辅助生成，从设定到章节正文，保证长篇叙事一致性。
 
+![小说项目列表](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123041029.png)
+
 ## 小说设定
 
 在小说列表页点击「新建小说」，填写标题后即可开始。AI 一键生成功能会根据标题推断并补全以下设定：
@@ -9,6 +11,8 @@
 频道、类型、题材大类、简介、模板、核心钩子、世界观、情节梗概、人设标签与人设描述。
 
 已填写的字段会作为方向性约束传给 AI，未填写的由 AI 自行推断。生成结果可一键覆盖保存。
+
+![小说设定界面](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123101210.png)
 
 ## 角色管理
 
@@ -18,11 +22,17 @@ AI 根据小说设定自动生成角色列表，每个角色包含：
 
 角色生成后可手动编辑，支持批量保存。
 
+![小说角色管理](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123114436.png)
+
 ## 故事大纲
 
 AI 根据设定与角色生成完整故事大纲，包含每章标题与章节概要。大纲支持手动调整，调整后 AI 生成章节正文时会参考大纲内容。
 
 每章附带风格指纹（Stylometry），记录叙事节奏、对话比例等文风特征，帮助 AI 保持前后一致。
+
+![小说剧集界面](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123132083.png)
+
+![小说总览界面](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123148463.png)
 
 ## 章节正文
 
@@ -41,6 +51,18 @@ AI 逐章生成正文内容。生成前会自动构建五大上下文，注入 S
 **对话图鉴（Voices）** — 收集角色说话样本，保持角色语言风格一致。避免"角色 A 说话像角色 B"的问题。
 
 **远距离记忆（Memory）** — 管理近期章节摘要与伏笔线索。远距离章节不需要全文注入，只需摘要即可让 AI "记住"关键信息。
+
+### AI 上下文增强
+
+五大上下文系统确保 AI 在长篇生成中保持叙事一致性。以下为核心上下文截图：
+
+![事件溯源](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123210889.png)
+
+![远距离记忆](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123231354.png)
+
+![角色状态](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123304592.png)
+
+![对话图鉴](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807142758732.png)
 
 每项可独立开关。在小说页面的「上下文」弹窗中管理本体规则、查看事件/记忆/角色状态/对话样本。
 
