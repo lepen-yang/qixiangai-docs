@@ -31,6 +31,7 @@ const RESET = '\x1b[0m'
 
 const info = (msg) => console.log(`${CYAN}ℹ️  ${msg}${RESET}`)
 const ok = (msg) => console.log(`${GREEN}✅ ${msg}${RESET}`)
+const warn = (msg) => console.warn(`${CYAN}⚠️  ${msg}${RESET}`)
 const fail = (msg) => {
   console.error(`${RED}❌ ${msg}${RESET}`)
   process.exit(1)
