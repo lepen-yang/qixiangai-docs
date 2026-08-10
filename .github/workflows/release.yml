@@ -1,6 +1,6 @@
 # 构建应用（双端）+ 部署文档站
 #
-# 触发条件：push 到 main 分支
+# 触发条件：手动触发（workflow_dispatch）
 # 流程：
 #   1. macOS + Windows 并行构建并上传 OSS
 #   2. 构建并部署文档站到 OSS
@@ -24,8 +24,6 @@
 name: Release App & Docs
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 concurrency:
@@ -49,6 +47,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+
+      - name: Remove package-lock.json
+        run: rm -f package-lock.json
 
       - name: Install dependencies
         run: npm install
@@ -81,6 +82,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+
+      - name: Remove package-lock.json
+        run: rm -f package-lock.json
 
       - name: Install dependencies
         run: npm install

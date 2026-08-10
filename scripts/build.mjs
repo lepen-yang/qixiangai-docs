@@ -26,12 +26,13 @@ const DIST_DIR = path.join(ROOT, 'src', '.vitepress', 'dist')
 
 const GREEN = '\x1b[32m'
 const CYAN = '\x1b[36m'
+const YELLOW = '\x1b[33m'
 const RED = '\x1b[31m'
 const RESET = '\x1b[0m'
 
 const info = (msg) => console.log(`${CYAN}ℹ️  ${msg}${RESET}`)
 const ok = (msg) => console.log(`${GREEN}✅ ${msg}${RESET}`)
-const warn = (msg) => console.warn(`${CYAN}⚠️  ${msg}${RESET}`)
+const warn = (msg) => console.warn(`${YELLOW}⚠️  ${msg}${RESET}`)
 const fail = (msg) => {
   console.error(`${RED}❌ ${msg}${RESET}`)
   process.exit(1)
