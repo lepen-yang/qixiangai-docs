@@ -2,11 +2,11 @@
   "platforms": [
     {
       "name": "macOS",
-      "version": "1.0.18",
+      "version": "1.0.19",
       "items": [
         {
           "label": "Apple Silicon (M1/M2/M3/M4)",
-          "file": "1.0.18/栖象AI工作室-1.0.18-arm64.dmg",
+          "file": "1.0.19/栖象AI工作室-1.0.19-arm64-mac.zip",
           "available": true
         },
         {
@@ -28,5 +28,5 @@
       ]
     }
   ],
-  "fetchedAt": "2026-08-06T16:45:58.529Z"
+  "fetchedAt": "2026-08-08T15:35:14.663Z"
 }

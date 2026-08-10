@@ -42,3 +42,12 @@ features:
     title: 内置视频编辑器
     details: OpenCut 集成，时间线编辑、WebGL 渲染、特效、语音转文字，导出成片。
 ---
+
+<script>
+  import StatsSection from './.vitepress/theme/components/StatsSection.vue'
+  import ShowcaseSection from './.vitepress/theme/components/ShowcaseSection.vue'
+</script>
+
+<StatsSection />
+
+<ShowcaseSection />

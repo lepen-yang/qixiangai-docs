@@ -107,6 +107,38 @@ AI 辅助生成世界观设定、角色档案、故事大纲与章节正文。�
 
 ---
 
+## 📸 功能展示
+
+| 功能 | 截图预览 |
+|------|---------|
+| **漫剧项目列表** | ![漫剧项目列表](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123026352.png) |
+| **漫剧剧集** | ![漫剧剧集](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807122826674.png) |
+| **漫剧角色** | ![漫剧角色](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807122739195.png) |
+| **漫剧场景** | ![漫剧场景](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807122946170.png) |
+| **漫剧道具** | ![漫剧道具](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807122929062.png) |
+| **漫剧资产地图** | ![漫剧资产地图](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123007193.png) |
+| **漫剧分镜** | ![漫剧分镜](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807130725331.png) |
+| **资产弹窗** | ![资产弹窗](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807130812690.png) |
+| **小说项目列表** | ![小说项目列表](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123041029.png) |
+| **小说设定** | ![小说设定](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123101210.png) |
+| **小说角色** | ![小说角色](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123114436.png) |
+| **小说剧集** | ![小说剧集](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123132083.png) |
+| **小说总览** | ![小说总览](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123148463.png) |
+| **AI 事件溯源** | ![AI 事件溯源](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123210889.png) |
+| **AI 远距离记忆** | ![AI 远距离记忆](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123231354.png) |
+| **AI 角色状态** | ![AI 角色状态](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123304592.png) |
+| **AI 对话图鉴** | ![AI 对话图鉴](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807142758732.png) |
+| **画布列表** | ![画布列表](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123342151.png) |
+| **画布工作区** | ![画布工作区](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123713607.png) |
+| **导演台节点** | ![导演台节点](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123836407.png) |
+| **内置模型** | ![内置模型](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123857732.png) |
+| **资产管理** | ![资产管理](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807124019993.png) |
+| **视频剪辑** | ![视频剪辑](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807124117696.png) |
+| **提示词库** | ![提示词库](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123949476.png) |
+| **设置页** | ![设置页](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807130658044.png) |
+
+---
+
 ## 🚀 快速开始
 
 ### 下载安装

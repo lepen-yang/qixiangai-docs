@@ -26,6 +26,10 @@
 | **Skybox** | 天空盒，提供环境背景与氛围光照 |
 | **Frame** | 画框，用于预览最终画面裁切区域 |
 
+![导演台节点](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123836407.png)
+
+![内置模型](https://liangx-gallery.oss-cn-beijing.aliyuncs.com/20260807123857732.png)
+
 ## 相机与导航
 
 - **轨道相机** — 默认模式，围绕目标点旋转、缩放、平移
