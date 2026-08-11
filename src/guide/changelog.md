@@ -30,6 +30,6 @@
 ### AI 模型支持
 
 - 文本：Doubao、MiniMax、Qwen、SiliconFlow、147api、OpenAI
-- 图像：Doubao Seedream、MiniMax、Wanx、Kling、SiliconFlow、147api、PPIO、Ideogram、Fal、GRSai、KIE、Dreamina
-- 视频：Doubao、MiniMax、Wanx、Kling、SiliconFlow、147api、Sora、Dreamina
+- 图像：Doubao Seedream、MiniMax、Wanx、Kling、SiliconFlow、147api、PPIO、Ideogram、Fal、GRSai、KIE
+- 视频：Doubao、MiniMax、Wanx、Kling、SiliconFlow、147api、Sora
 - 音频：Doubao Seed-TTS、MiniMax、ElevenLabs

@@ -38,7 +38,6 @@
 | Fal | Fal 图像模型 | API Key |
 | GRSai | GRSai 图像模型 | API Key |
 | KIE | KIE 图像模型 | API Key |
-| Dreamina（即梦） | 字节即梦 CLI，本地登录态 | 本地登录 |
 
 ## 视频模型
 
@@ -53,7 +52,6 @@
 | SiliconFlow | 硅基流动中转平台 | API Key |
 | 147api | 第三方中转平台 | API Key |
 | Sora | OpenAI Sora | API Key |
-| Dreamina（即梦） | 字节即梦 CLI，本地登录态 | 本地登录 |
 
 ## 音频模型
 
@@ -83,16 +81,6 @@
 - 音频 — 用于 TTS/音乐生成
 
 在具体创作场景中（如分镜图片生成、Agent 对话），可临时切换到其他模型。
-
-### 即梦 CLI 配置
-
-即梦（Dreamina）作为本地 CLI Provider，使用方式与其他 Provider 不同：
-
-1. 在设置页面点击「安装即梦 CLI」，系统会自动执行官方安装脚本
-2. 安装完成后点击「登录」，浏览器会打开授权页面
-3. 完成授权后即可使用，无需 API Key
-
-即梦 CLI 的积分余额会在设置页面显示。
 
 ## 音色配置
 

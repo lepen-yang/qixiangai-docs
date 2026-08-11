@@ -34,9 +34,7 @@ AI 可以一键生成小说设定（频道、类型、题材、世界观、情�
 
 接入 30+ 种 AI 模型，覆盖四种模态。
 
-文本生成支持豆包、MiniMax、通义千问、SiliconFlow、OpenAI 等 6 家 LLM。图像生成支持豆包 Seedream、MiniMax、通义万象、可灵、Ideogram、Fal 等 12 家图像模型。视频生成支持豆包、MiniMax、可灵、Sora 等 8 家视频模型。音频生成支持豆包 Seed-TTS、MiniMax、ElevenLabs 等 3 家音频模型，覆盖语音合成与音乐生成。
-
-即梦（Dreamina）作为本地 CLI Provider，无需 API Key，通过本地登录态直接调用。
+文本生成支持豆包、MiniMax、通义千问、SiliconFlow、OpenAI 等 6 家 LLM。图像生成支持豆包 Seedream、MiniMax、通义万象、可灵、Ideogram、Fal 等 11 家图像模型。视频生成支持豆包、MiniMax、可灵、Sora 等 7 家视频模型。音频生成支持豆包 Seed-TTS、MiniMax、ElevenLabs 等 3 家音频模型，覆盖语音合成与音乐生成。
 
 详见 [AI 模型配置](./ai-models)。
 
