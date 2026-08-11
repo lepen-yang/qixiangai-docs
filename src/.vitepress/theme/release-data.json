@@ -2,11 +2,11 @@
   "platforms": [
     {
       "name": "macOS",
-      "version": "1.0.19",
+      "version": "1.0.21",
       "items": [
         {
           "label": "Apple Silicon (M1/M2/M3/M4)",
-          "file": "1.0.19/栖象AI工作室-1.0.19-arm64-mac.zip",
+          "file": "1.0.21/栖象AI工作室-1.0.21-arm64-mac.zip",
           "available": true
         },
         {
@@ -18,15 +18,15 @@
     },
     {
       "name": "Windows",
-      "version": "1.0.22",
+      "version": "1.0.26",
       "items": [
         {
           "label": "Windows 10/11 (64-bit)",
-          "file": "1.0.22/栖象AI工作室-1.0.22-setup.exe",
+          "file": "1.0.26/栖象AI工作室-1.0.26-setup.exe",
           "available": true
         }
       ]
     }
   ],
-  "fetchedAt": "2026-08-08T15:35:14.663Z"
+  "fetchedAt": "2026-08-11T02:56:42.852Z"
 }
